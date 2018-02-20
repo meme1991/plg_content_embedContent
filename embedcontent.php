@@ -42,7 +42,7 @@ class plgContentEmbedContent extends JPlugin {
 		$mainframe    = JFactory::getApplication();
 		$document     = JFactory::getDocument();
 		$db           = JFactory::getDbo();
-		//$siteTemplate = $mainframe->getTemplate();
+		$tmpl	      = $mainframe->getTemplate();
 		//$menu           = $mainframe->getMenu();
 		//$active         = $mainframe->getMenu()->getActive();
 
