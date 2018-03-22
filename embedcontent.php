@@ -20,15 +20,6 @@ class plgContentEmbedContent extends JPlugin {
 	var $plg_name = "embedcontent";
 	var $plg_tag  = "embedContent";
 
-	function plgContentArticleGallery( &$subject, $params ){
-		parent::__construct( $subject, $params );
-
-		// Define the DS constant under Joomla! 3.0+
-		if (!defined('DS')){
-			define('DS', DIRECTORY_SEPARATOR);
-		}
-	}
-
 	// Joomla! 2.5+
 	function onContentPrepare($context, &$row, &$params, $page = 0){
 		$this->renderPhGallery($row, $params, $page = 0);
@@ -36,6 +27,10 @@ class plgContentEmbedContent extends JPlugin {
 
 	// The main function
 	function renderPhGallery(&$row, &$params, $page = 0){
+		// Define the DS constant under Joomla! 3.0+
+		if (!defined('DS')){
+			define('DS', DIRECTORY_SEPARATOR);
+		}
 
 		// API
 		jimport('joomla.filesystem.file');
